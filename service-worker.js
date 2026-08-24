@@ -1,4 +1,4 @@
-const APP_CACHE_VERSION = "v5";
+const APP_CACHE_VERSION = "v6";
 const DATA_CACHE_VERSION = "v1";
 const APP_CACHE = `fsrs-sudoku-app-${APP_CACHE_VERSION}`;
 const DATA_CACHE = `fsrs-sudoku-data-${DATA_CACHE_VERSION}`;
@@ -15,6 +15,7 @@ const appUrl = (path) => new URL(path, self.location).href;
 const SUDOKU_URL = appUrl("./sudoku.html");
 const APP_SHELL = [
   "./sudoku.html",
+  "./sudoku/bruteforce.svg",
   "./sudoku/sudoku.css",
   "./sudoku/custom.css",
   "./sudoku/sudoku_i18n.js",
