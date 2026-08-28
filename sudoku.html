@@ -506,6 +506,7 @@
       class="fixed inset-0 z-10 hidden items-center justify-center">
       <div class="bg-white p-6 rounded-lg shadow-xl">
         <h3
+          id="candidate-modal-title"
           class="text-lg font-medium text-center mb-2"
           data-i18n="modal_candidate_title">
           Color a Candidate
@@ -972,6 +973,8 @@
 
         <div class="h-8">
           <label
+            data-tooltip="Direct candidates: left-click to set/erase; right-click to erase in Number mode."
+            data-i18n-tooltip="pref_experimental_mode_tooltip_desktop"
             class="h-8 flex items-center gap-2 text-sm font-medium text-gray-800 dark:text-gray-200 cursor-pointer">
             <input
               type="checkbox"
