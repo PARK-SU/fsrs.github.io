@@ -693,6 +693,12 @@
           </button>
 
           <button
+            id="copy-yzf-btn"
+            class="w-full px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 shadow-sm transition-colors"
+            data-i18n="btn_copy_yzf">
+            Copy YZF Format
+          </button>
+          <button
             id="copy-image-btn"
             class="w-full px-4 py-2 bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 shadow-sm transition-colors"
             data-i18n="btn_copy_image">
@@ -762,7 +768,7 @@
         <div class="flex flex-col gap-3">
           <button
             id="reset-confirm-btn"
-            class="w-full flex flex-col items-center justify-center px-4 py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 shadow-sm transition-colors leading-tight">
+            class="w-full flex flex-col items-center justify-center px-4 py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 shadow-sm transition-colors">
             <span data-i18n="btn_clear_board">Clear Board</span>
           </button>
           <button
@@ -792,7 +798,7 @@
         <div class="flex flex-col gap-3">
           <button
             id="autopencil-confirm-btn"
-            class="w-full flex flex-col items-center justify-center px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 shadow-sm transition-colors leading-tight">
+            class="w-full flex flex-col items-center justify-center px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 shadow-sm transition-colors">
             <span data-i18n="btn_confirm">Confirm</span>
           </button>
           <button
@@ -878,138 +884,141 @@
         <div
           id="preferences-scroll-container"
           class="flex-1 min-h-0 overflow-y-auto pr-1 custom-scrollbar">
-        <div class="h-8">
-          <button
-            id="theme-toggle"
-            type="button"
-            class="w-full h-8 flex items-center gap-2 text-sm font-medium text-gray-800 dark:text-gray-200"
-            aria-labelledby="theme-toggle-label">
-            <svg
-              class="theme-toggle-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true">
-              <circle
-                cx="12"
-                cy="12"
-                r="8.5"
-                stroke="currentColor"
-                stroke-width="1.75" />
-              <path d="M12 3.5a8.5 8.5 0 0 1 0 17Z" fill="currentColor" />
-            </svg>
-            <span id="theme-toggle-label" data-i18n="pref_theme"
-              >Toggle Theme</span
-            >
-          </button>
-        </div>
-
-        <div
-          id="difficulty-engine-preference"
-          class="h-8 flex items-center justify-between gap-3 text-sm text-gray-800 dark:text-gray-200">
-          <label
-            for="difficulty-engine-select"
-            class="font-medium flex items-center gap-2">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-              class="shrink-0">
-              <path
-                d="M4 15a8 8 0 1 1 16 0"
-                stroke="currentColor"
-                stroke-width="1.75"
-                stroke-linecap="round" />
-              <path
-                d="M12 15 16 9"
-                stroke="currentColor"
-                stroke-width="1.75"
-                stroke-linecap="round" />
-              <circle cx="12" cy="15" r="1.3" fill="currentColor" />
-            </svg>
-            <span data-i18n="pref_difficulty_engine">Difficulty rating</span>
-          </label>
-          <select
-            id="difficulty-engine-select"
-            class="mb-1 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2 py-1 text-sm">
-            <option value="skfr">skfr</option>
-            <option value="se">SE</option>
-            <option value="old-se">SE 1.2.1</option>
-          </select>
-        </div>
-
-        <div
-          class="h-8 flex items-center justify-between gap-3 text-sm text-gray-800 dark:text-gray-200">
-          <label for="display-mode-select" class="font-medium flex items-center gap-2">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-              class="shrink-0">
-              <rect
-                x="3.5"
-                y="3.5"
-                width="17"
-                height="17"
-                rx="2"
-                stroke="currentColor"
-                stroke-width="1.75" />
-              <path
-                d="M9.17 3.5v17M14.83 3.5v17M3.5 9.17h17M3.5 14.83h17"
-                stroke="currentColor"
-                stroke-width="1.5" />
-            </svg>
-            <span data-i18n="pref_display_mode">Display Mode</span>
-          </label>
-          <select
-            id="display-mode-select"
-            class="mt-1 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2 py-1 text-sm">
-            <option value="A" data-i18n="pref_display_mode_a">Phone</option>
-            <option value="B" data-i18n="pref_display_mode_b">Numpad</option>
-          </select>
-        </div>
-
-        <div class="h-8">
-          <label
-            data-tooltip="Direct candidates: left-click to set/erase; right-click to erase in Number mode."
-            data-i18n-tooltip="pref_experimental_mode_tooltip_desktop"
-            class="h-8 flex items-center gap-2 text-sm font-medium text-gray-800 dark:text-gray-200 cursor-pointer">
-            <input
-              type="checkbox"
-              id="experimental-mode-toggle"
-              class="w-4 h-4 mx-0.5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 shrink-0" />
-            <span class="block" data-i18n="pref_experimental_mode">Experimental Mode</span>
-          </label>
-        </div>
-
-        <div
-          class="pb-2 mb-2 border-b border-gray-300 dark:border-gray-700">
-          <label
-            class="h-8 flex items-center gap-2 text-sm font-medium text-gray-800 dark:text-gray-200 cursor-pointer">
-            <input
-              type="checkbox"
-              id="toggle-uniqueness-btn"
-              class="w-4 h-4 mx-0.5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 shrink-0" />
-            <div>
-              <span class="block" data-i18n="pref_uniqueness"
-                >Enable Uniqueness Techniques</span
+          <div class="h-8">
+            <button
+              id="theme-toggle"
+              type="button"
+              class="w-full h-8 flex items-center gap-2 text-sm font-medium text-gray-800 dark:text-gray-200"
+              aria-labelledby="theme-toggle-label">
+              <svg
+                class="theme-toggle-icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true">
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="8.5"
+                  stroke="currentColor"
+                  stroke-width="1.75" />
+                <path d="M12 3.5a8.5 8.5 0 0 1 0 17Z" fill="currentColor" />
+              </svg>
+              <span id="theme-toggle-label" data-i18n="pref_theme"
+                >Toggle Theme</span
               >
-            </div>
-          </label>
-        </div>
+            </button>
+          </div>
 
-        <p class="text-xs text-gray-500 mb-2 italic" data-i18n="pref_drag_hint">
-          Drag & drop to reorder solver priority.
-        </p>
+          <div
+            id="difficulty-engine-preference"
+            class="h-8 flex items-center justify-between gap-3 text-sm text-gray-800 dark:text-gray-200">
+            <label
+              for="difficulty-engine-select"
+              class="font-medium flex items-center gap-2">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+                class="shrink-0">
+                <path
+                  d="M4 15a8 8 0 1 1 16 0"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round" />
+                <path
+                  d="M12 15 16 9"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round" />
+                <circle cx="12" cy="15" r="1.3" fill="currentColor" />
+              </svg>
+              <span data-i18n="pref_difficulty_engine">Difficulty rating</span>
+            </label>
+            <select
+              id="difficulty-engine-select"
+              class="mb-1 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2 py-1 text-sm">
+              <option value="skfr">skfr</option>
+              <option value="se">SE</option>
+              <option value="old-se">SE 1.2.1</option>
+            </select>
+          </div>
 
-        <div
-          id="technique-list-container"
-          class="flex flex-col gap-1"></div>
+          <div
+            class="h-8 flex items-center justify-between gap-3 text-sm text-gray-800 dark:text-gray-200">
+            <label
+              for="display-mode-select"
+              class="font-medium flex items-center gap-2">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+                class="shrink-0">
+                <rect
+                  x="3.5"
+                  y="3.5"
+                  width="17"
+                  height="17"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="1.75" />
+                <path
+                  d="M9.17 3.5v17M14.83 3.5v17M3.5 9.17h17M3.5 14.83h17"
+                  stroke="currentColor"
+                  stroke-width="1.5" />
+              </svg>
+              <span data-i18n="pref_display_mode">Display Mode</span>
+            </label>
+            <select
+              id="display-mode-select"
+              class="mt-1 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2 py-1 text-sm">
+              <option value="A" data-i18n="pref_display_mode_a">Phone</option>
+              <option value="B" data-i18n="pref_display_mode_b">Numpad</option>
+            </select>
+          </div>
+
+          <div class="h-8">
+            <label
+              data-tooltip="Direct candidates: left-click to set/erase; right-click to erase in Number mode."
+              data-i18n-tooltip="pref_experimental_mode_tooltip_desktop"
+              class="h-8 flex items-center gap-2 text-sm font-medium text-gray-800 dark:text-gray-200 cursor-pointer">
+              <input
+                type="checkbox"
+                id="experimental-mode-toggle"
+                class="w-4 h-4 mx-0.5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 shrink-0" />
+              <span class="block" data-i18n="pref_experimental_mode"
+                >Experimental Mode</span
+              >
+            </label>
+          </div>
+
+          <div class="pb-2 mb-2 border-b border-gray-300 dark:border-gray-700">
+            <label
+              class="h-8 flex items-center gap-2 text-sm font-medium text-gray-800 dark:text-gray-200 cursor-pointer">
+              <input
+                type="checkbox"
+                id="toggle-uniqueness-btn"
+                class="w-4 h-4 mx-0.5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 shrink-0" />
+              <div>
+                <span class="block" data-i18n="pref_uniqueness"
+                  >Enable Uniqueness Techniques</span
+                >
+              </div>
+            </label>
+          </div>
+
+          <p
+            class="text-xs text-gray-500 mb-2 italic"
+            data-i18n="pref_drag_hint">
+            Drag & drop to reorder solver priority.
+          </p>
+
+          <div id="technique-list-container" class="flex flex-col gap-1"></div>
         </div>
 
         <div
