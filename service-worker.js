@@ -1,5 +1,5 @@
 const APP_CACHE_VERSION = "v6";
-const DATA_CACHE_VERSION = "v1";
+const DATA_CACHE_VERSION = "v2";
 const APP_CACHE = `fsrs-sudoku-app-${APP_CACHE_VERSION}`;
 const DATA_CACHE = `fsrs-sudoku-data-${DATA_CACHE_VERSION}`;
 const META_CACHE = `fsrs-sudoku-meta-${DATA_CACHE_VERSION}`;
@@ -217,14 +217,8 @@ async function cacheFirstData(request) {
   return cached || networkFirstData(request);
 }
 
-async function getUnlimitedResponse(request) {
-  const refreshedToday =
-    (await readMeta("unlimited-refresh-date")) === getKstDateKey();
-  if (!refreshedToday) return networkFirstData(request);
-
-  const cache = await caches.open(DATA_CACHE);
-  const cached = await cache.match(request.url);
-  return cached || networkFirstData(request);
+function getUnlimitedResponse(request) {
+  return networkFirstData(request);
 }
 
 async function cacheFirstRuntime(request) {
